@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>PeliculasApp</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar [(ngModel)]="term" (ionChange)="searchChanged($event)"></ion-searchbar>
+
+  <ion-item>
+    <ion-label>Select search type</ion-label>
+    <ion-select [(ngModel)]="type" (ionChange)="searchChanged($event)">
+      <ion-select-option seleted="true" value="">All</ion-select-option>
+      <ion-select-option value="movies">Movies</ion-select-option>
+      <ion-select-option value="series">Series</ion-select-option>
+      <ion-select-option value="episodes">Episode</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-list>
+    <ion-item button *ngFor="let pelicula of (results | async)" [routerLink]="['/', 'pelicula', pelicula.imdbID]">
+      <ion-avatar slot="start">
+        <img src="{{pelicula.Poster}}" alt="{{pelicula.Title}}" *ngIf="pelicula.Poster != 'N/A'">
+      </ion-avatar>
+      <ion-label text-wrap>
+        <h3>{{pelicula.Title}}</h3>
+        {{pelicula.Year}}
+      </ion-label>
+      <ion-icon slot="end" *ngIf="pelicula.Type == 'movie'" name="videocam"></ion-icon>
+      <ion-icon slot="end" *ngIf="pelicula.Type == 'serie'" name="tv"></ion-icon>
+      <ion-icon slot="end" *ngIf="pelicula.Type == 'episode'" name="tablet-portrait"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>
