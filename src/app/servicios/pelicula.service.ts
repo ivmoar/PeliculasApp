@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { IPeliculas } from '../modelos/IPeliculas.interface';
 
@@ -10,6 +9,7 @@ import { IPeliculas } from '../modelos/IPeliculas.interface';
 export class PeliculaService {
   private url: string = '';
   private apiKey: string = 'abfa4af1';
+  //abfa4af1
 
   constructor(private http: HttpClient) { }
 

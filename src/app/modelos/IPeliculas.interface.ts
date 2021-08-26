@@ -1,10 +1,11 @@
 export interface IPeliculas {
     Title: string;
     Genre: string;
-    ImdbRating: string;
+    Language: string;
     Year: string;
-    Director: string;
+    Description: string;
     Actors: string;
     Poster: string;
+    Director: string;
     Type: string;
 }
