@@ -20,6 +20,9 @@ export class PeliculaService {
   }
 
   getDetails(id:string){
-    return this.http.get<IPeliculas>(`https://www.omdbapi.com/?i=${id}$plot=full&apikey=${this.apiKey}`);
+
+    const url = `https://www.omdbapi.com/?i=${id}$plot=full&apikey=${this.apiKey}`
+    console.log(`URL ${url}`)
+    return this.http.get<IPeliculas>(`https://www.omdbapi.com/?i=${id}&plot=full&apikey=${this.apiKey}`);
   }
 }
