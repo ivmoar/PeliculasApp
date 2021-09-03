@@ -3,31 +3,31 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-title>{{content?.Genre}}</ion-title>
+    <ion-title>{{movie?.Genre}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card *ngIf="content">
+  <ion-card *ngIf="movie">
     <ion-card-header text-center>
-      <ion-card-title>{{content.Title}}</ion-card-title>
+      <ion-card-title>{{movie.Title}}</ion-card-title>
       <ion-card-subtitle>
-        {{content.Year}}
+        {{movie.Year}}
       </ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
-      <img src="{{content.Poster}}" class="info-img">
+      <img src="{{movie.Poster}}" class="info-img">
       <ion-item lines="none">
         <ion-icon name="star-half" slot="start"></ion-icon>
-        <ion-label>{{content.Language}}</ion-label>
+        <ion-label>{{movie.Language}}</ion-label>
       </ion-item>
       <ion-item lines="none">
         <ion-icon name="clipboard" slot="start"></ion-icon>
-        <ion-label text-wrap>{{content.Director}}</ion-label>
+        <ion-label text-wrap>{{movie.Director}}</ion-label>
       </ion-item>
       <ion-item lines="none">
         <ion-icon name="people" slot="start"></ion-icon>
-        <ion-label text-wrap>{{content.Actors}}</ion-label>
+        <ion-label text-wrap>{{movie.Actors}}</ion-label>
       </ion-item>
     </ion-card-content>
   </ion-card>

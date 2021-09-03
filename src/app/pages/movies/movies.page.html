@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>PeliculasApp</ion-title>
+    <ion-title>MoviesApp</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -18,17 +18,17 @@
   </ion-item>
 
   <ion-list>
-    <ion-item button *ngFor="let pelicula of (results | async)" [routerLink]="['/', 'pelicula', pelicula.imdbID]">
+    <ion-item button *ngFor="let movie of (movies | async)" [routerLink]="['/', 'movie', movie.imdbID]">
       <ion-avatar slot="start">
-        <img src="{{pelicula.Poster}}" alt="{{pelicula.Title}}" *ngIf="pelicula.Poster != 'N/A'">
+        <img src="{{movie.Poster}}" alt="{{movie.Title}}" *ngIf="movie.Poster != 'N/A'">
       </ion-avatar>
       <ion-label text-wrap>
-        <h3>{{pelicula.Title}}</h3>
-        {{pelicula.Year}}
+        <h3>{{movie.Title}}</h3>
+        {{movie.Year}}
       </ion-label>
-      <ion-icon slot="end" *ngIf="pelicula.Type == 'movie'" name="videocam"></ion-icon>
-      <ion-icon slot="end" *ngIf="pelicula.Type == 'serie'" name="tv"></ion-icon>
-      <ion-icon slot="end" *ngIf="pelicula.Type == 'episode'" name="tablet-portrait"></ion-icon>
+      <ion-icon slot="end" *ngIf="movie.Type == 'movie'" name="videocam"></ion-icon>
+      <ion-icon slot="end" *ngIf="movie.Type == 'serie'" name="tv"></ion-icon>
+      <ion-icon slot="end" *ngIf="movie.Type == 'episode'" name="tablet-portrait"></ion-icon>
     </ion-item>
   </ion-list>
 </ion-content>

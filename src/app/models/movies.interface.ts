@@ -1,4 +1,4 @@
-export interface IPeliculas {
+export interface Movies {
     Title: string;
     Genre: string;
     Language: string;
